@@ -102,7 +102,7 @@ start iw3mp.exe +set fs_game mods/%mod% +set name %hostName% +set sv_pure 0 +set
 echo.
 :_addClient
 cls
-echo Client manager version 100
+echo Client manager version %clman_version%
 echo.
 echo map launched:
 echo   %map%
