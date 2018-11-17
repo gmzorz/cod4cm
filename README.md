@@ -2,5 +2,6 @@
 
 This script was inspired by Sam Hopkins' method of setting up players for faked clips. 
 
-### Usage:
+### Installing:
 
+Extract **clman.bat**, **clman.cfg** and **version.cmd** into the cod4 directory
