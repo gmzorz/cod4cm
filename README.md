@@ -4,7 +4,7 @@ This script was inspired by Sam Hopkins' method of setting up players for faked 
 
 Running multiple CoD4 windows at once and letting them connect to the local host. This script eases the workflow and even has a built-in updater. Default mod to setup clips will be downloaded upon first launch. 
 
-### Mod features
+#### Mod features
 
 * Smaller crosshair
 * Promod weapons
