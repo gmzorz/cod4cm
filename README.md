@@ -11,8 +11,7 @@ Running multiple CoD4 windows at once and letting them connect to the local host
 
 #### Todo
 
-* A 'Wallhack' (aka depthhack material property).
-* Explosive Bullets/Silent aim
+* Chams (aka depthhack material property). This has already been done, but not yet compatible as demos running on vanilla cod.
 
 ### Installing and running:
 
