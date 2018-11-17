@@ -6,13 +6,12 @@ Running multiple CoD4 windows at once and letting them connect to the local host
 
 ### Features
 
-Smaller crosshair
+* Smaller crosshair
 
 #### Todo
 
-A 'Wallhack' (aka depthhack material property).
-
-Explosive Bullets/Silent aim
+* A 'Wallhack' (aka depthhack material property).
+* Explosive Bullets/Silent aim
 
 ### Installing and running:
 
