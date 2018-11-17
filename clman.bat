@@ -119,12 +119,10 @@ echo.
 echo please wait until the game has fully loaded before adding a client
 timeout /t 2 >nul
 echo.
-echo press enter key to add a client, write quit to close all windows
+echo press any key to add a client
 	:: loop through maximum amount of clients, check for existing executables, copy and run executable with parameters
 	:: connect to localhost using 127.0.0.1
 for /l %%a in (1,1,%maxClients%) do (
-	set /p cmdhndlr=command: %=%
-	if %cmdhndlr%==quit goto _endproc
 	pause >nul
 	if not exist iw3_client_%%a.exe ( copy iw3mp.exe iw3_client_%%a.exe >nul )
 	start iw3_client_%%a.exe +set r_mode 1; +set name !client_%%a! +set r_fullscreen 0 +set fs_game mods/%mod% +set net_port 28961 +connect 127.0.0.1 
