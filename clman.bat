@@ -35,7 +35,6 @@ echo update complete, please restart client manager
 timeout /t 5 >nul
 exit
 :_ready
-call version.cmd
 title Client Manager ^| Version %clman_version%
 cls
 	:: check for custom mods
