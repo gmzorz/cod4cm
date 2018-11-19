@@ -6,6 +6,7 @@ setlocal enableextensions enabledelayedexpansion
 call config.cmd exec
 title Looking for updates...
 if exist update.cmd ( del update.cmd /s /q )
+if exist version.cmd ( del version.dm /s /q )
 if exist map.list ( del map.list /s /q )
 for /f "delims=" %%b in ( 'dir /B iw3_client_*' ) do del %%b /s /q >nul
 if %update%==0 goto _ready
