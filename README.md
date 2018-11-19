@@ -17,4 +17,4 @@ Running multiple CoD4 windows at once and letting them connect to the local host
 
 Extract [clman.bat](https://github.com/gmzorz/cod4cm/blob/master/clman.bat) and [config.cmd](https://github.com/gmzorz/cod4cm/blob/master/config.cmd) into the cod4 directory. **Always run clman.bat as Administrator**, check clman.cfg for more options
 
-run config.cmd to edit config
+run config.cmd to edit config (or right click -> edit)
