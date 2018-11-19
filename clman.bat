@@ -1,4 +1,5 @@
 @echo off
+set clman_version=104
 pushd %~dp0
 setlocal enableextensions enabledelayedexpansion
 	:: Rename config and call variables, add empty param to skip opening file using notepad
@@ -6,7 +7,6 @@ call config.cmd exec
 title Looking for updates...
 if exist update.cmd ( del update.cmd /s /q )
 if exist map.list ( del map.list /s /q )
-if not exist version.cmd ( echo version.cmd not found, please redownload & pause >nul & exit)
 for /f "delims=" %%b in ( 'dir /B iw3_client_*' ) do del %%b /s /q >nul
 if %update%==0 goto _ready
 :_check
@@ -14,7 +14,6 @@ if %update%==0 goto _ready
 	:: if the variable returns a different value, ask for update
 bitsadmin /transfer CHECK /download /priority high http://gmzorz.com/ZorWarfare/check.cmd "%cd%/check.cmd"
 call check.cmd
-call version.cmd
 if %clman_check% == %clman_version% del check.cmd /s /q >nul & goto _ready
 cls
 echo. 
