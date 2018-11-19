@@ -1,8 +1,8 @@
 @echo off
 pushd %~dp0
 setlocal enableextensions enabledelayedexpansion
-	:: Rename config and call variables, additional cleanup
-ren clman.cfg c.cmd & call c.cmd & ren c.cmd clman.cfg
+	:: Rename config and call variables, add empty param to skip opening file using notepad
+call config.cmd exec
 title Looking for updates...
 if exist map.list ( del map.list /s /q )
 if not exist version.cmd ( echo version.cmd not found, please redownload & pause >nul & exit)
