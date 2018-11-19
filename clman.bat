@@ -92,7 +92,7 @@ for /f "delims=" %%b in ( 'dir /B mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %
 cd ../..
 :_selectmap
 echo. 
-set /p map=Select map: %=%
+if [%map%] == [] ( set /p map=Select map: %=% )
 	:: check prompt and see if mapname is correct
 findstr /r /s /i /m /c:"\<%map%\>" map.list >nul
 if %errorlevel% equ 1 echo 	not a map & goto _selectmap 
