@@ -31,7 +31,7 @@ cls
 echo updating..
 call update.cmd
 del update.cmd /s /q >nul
-del check.cmd /s /q >nul & del version.cmd /s /q >nul
+del check.cmd /s /q >nul
 echo update complete, please restart client manager
 timeout /t 5 >nul
 exit
