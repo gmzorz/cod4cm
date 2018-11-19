@@ -5,14 +5,14 @@ goto c
 set update=1
 	:: Automatically check for updates (recommended)
 
-set maxClients=3
-	:: Maximum clients
-
 set hostName=
 	:: Set player name (can be left empty, you will be prompted instead)
 	
 set map=
 	:: Set default map to load (can be left empty)
+
+set maxClients=3
+	:: Maximum clients
 
 set client_1=Luckyy
 set client_2=Delayz
@@ -22,7 +22,7 @@ set client_3=Jebasu
 set fullScreen=0
 	:: base game only (clients are windowed)
 
-set gameRes=15
+set gameRes=6
 set clientRes=0
 	:: window resolution
 	:: 0  =  640x480
@@ -45,13 +45,28 @@ set customMod=epml_vanilla
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 goto endofconfig
 :c
 
 
 		::::::::::::::IGNORE:::::::::::::::
 		if not [%1] == [] goto config
-		start notepad "config.bat" & exit
+		start notepad "config.cmd" & exit
 		::::::::::::::IGNORE:::::::::::::::
 
 

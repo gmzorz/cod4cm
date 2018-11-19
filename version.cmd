@@ -1,1 +1,1 @@
-set clman_version=100  
+set clman_version=102  

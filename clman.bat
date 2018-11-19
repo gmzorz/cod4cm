@@ -33,10 +33,11 @@ del update.cmd /s /q >nul
 del check.cmd /s /q >nul & del version.cmd /s /q >nul
 echo set clman_version=%clman_check% > version.txt & ren version.txt version.cmd
 :_ready
+call version.cmd
 title Client Manager ^| Version %clman_version%
 cls
 	:: check for custom mods
-if [%customMod%] == [] ( set mod=%customMod% & goto _cont ) else ( set mod=ZorWarfare )
+if [%customMod%] == [] ( set mod=ZorWarfare ) else ( set mod=%customMod% & goto _cont )
 	:: see if ZorWarfare exists. If not, download mod
 if not exist "Mods/ZorWarfare/mod.ff" ( goto _prompt ) else ( goto _cont )
 :_prompt
