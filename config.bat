@@ -1,3 +1,15 @@
+		::::::::::::::IGNORE:::::::::::::::
+		::::::::::::::IGNORE:::::::::::::::
+		if not [%1] == [] goto config
+		start notepad "config.bat" & exit
+		::::::::::::::IGNORE:::::::::::::::
+		:::::::::::::IGNORE::::::::::::::::
+
+:config
+set map=mp_crash
+echo test
+pause
+
 set update=1
 	:: Automatically check for updates (recommended)
 
@@ -30,3 +42,4 @@ set clientRes=0
 
 set customMod=epml_vanilla
 	:: Load a custom mod instead of ZorWarfare, leave empty if you wish to use the default mod
+
