@@ -32,7 +32,7 @@ set clientRes=0
 	:: 18 =  1920x1080
 	:: for more info, run cod4 and write "r_mode " in console
 
-set customMod=epml_vanilla
+set customMod=
 	:: Load a custom mod instead of ZorWarfare, leave empty if you wish to use the default mod
 	
 	:: End of config, please do not modify anything below this point
