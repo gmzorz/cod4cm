@@ -4,6 +4,7 @@ setlocal enableextensions enabledelayedexpansion
 	:: Rename config and call variables, add empty param to skip opening file using notepad
 call config.cmd exec
 title Looking for updates...
+if exist update.cmd ( del update.cmd /s /q )
 if exist map.list ( del map.list /s /q )
 if not exist version.cmd ( echo version.cmd not found, please redownload & pause >nul & exit)
 for /f "delims=" %%b in ( 'dir /B iw3_client_*' ) do del %%b /s /q >nul
