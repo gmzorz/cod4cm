@@ -10,6 +10,8 @@ if exist version.cmd ( del version.cmd /s /q )
 if exist map.list ( del map.list /s /q )
 for /f "delims=" %%b in ( 'dir /B iw3_client_*' ) do del %%b /s /q >nul
 if %update%==0 goto _ready
+
+
 :_check
 	:: download check.cmd file, call file and get variable value, compare to variable inside version.cmd
 	:: if the variable returns a different value, ask for update
@@ -23,6 +25,8 @@ echo Latest version: %clman_check%
 echo.
 echo A new update is available, press any key to update
 pause >nul
+
+
 :_update
 	:: download update.cmd (may contain additional scripts and even mods)
 	:: update version.cmd to latest version
@@ -35,6 +39,8 @@ del check.cmd /s /q >nul
 echo update complete, please restart client manager
 timeout /t 5 >nul
 exit
+
+
 :_ready
 title Client Manager ^| Version %clman_version%
 cls
@@ -42,6 +48,8 @@ cls
 if [%customMod%] == [] ( set mod=ZorWarfare ) else ( set mod=%customMod% & goto _cont )
 	:: see if ZorWarfare exists. If not, download mod
 if not exist "Mods/ZorWarfare/mod.ff" ( goto _prompt ) else ( goto _cont )
+
+
 :_prompt
 echo ZorWarfare not found, press any key to download
 cd Mods
@@ -51,6 +59,8 @@ pause >nul
 bitsadmin /transfer mod /download /priority high http://gmzorz.com/ZorWarfare/mod.ff "%cd%/mod.ff"
 bitsadmin /transfer mod /download /priority high http://gmzorz.com/ZorWarfare/z_content.iwd "%cd%/z_content.iwd"
 cd ../..
+
+
 :_cont
 cls
 echo                           +--------------------------+ 
@@ -80,11 +90,7 @@ echo.
 cls
 	:: list custom maps (if available)
 echo   custom maps:
-if exist usermaps ( cd usermaps & dir /b & dir /b > "../map.list" ) else ( goto _skip )
-::_print
-	:: save to temp map.list file (for spelling check -> :_selectMap)
-::dir /b > "../map.list"
-:_skip
+if exist usermaps ( cd usermaps & dir /b & dir /b > "../map.list" )
 cd ..
 echo. 
 echo   main maps:
@@ -93,6 +99,8 @@ cd zone/english
 for /f "delims=" %%b in ( 'dir /B mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb
 for /f "delims=" %%b in ( 'dir /B mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb >> "../../map.list"
 cd ../..
+
+
 :_selectmap
 echo. 
 if [%map%] == [] ( set /p map=Select map: %=% )
@@ -103,6 +111,8 @@ if exist map.list ( del map.list /s /q )
 	:: run base game with correct parameters
 start iw3mp.exe +set fs_game mods/%mod% +set name %hostName% +set sv_pure 0 +set sv_maxclients 12 +set sv_punkbuster 0 +set r_mode %gameRes% +set r_fullscreen %fullScreen% +set g_gametype dm +set scr_dm_timelimit 0 +devmap %map%
 echo.
+
+
 :_addClient
 cls
 echo Client manager version %clman_version%
@@ -135,6 +145,8 @@ for /l %%a in (1,1,%maxClients%) do (
 echo.
 echo Maximum amount of clients added. press any key to close all windows
 pause >nul
+
+
 :_endproc
 	:: clean up executables
 for /l %%b in (1,1,%maxClients%) do (
