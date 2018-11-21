@@ -34,6 +34,7 @@ bitsadmin /transfer UPDATE /download /priority high http://gmzorz.com/ZorWarfare
 cls
 echo updating..
 call update.cmd
+timeout /t 1 >nul
 del update.cmd /s /q >nul
 del check.cmd /s /q >nul
 echo update complete, please restart client manager
