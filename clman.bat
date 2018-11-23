@@ -110,7 +110,7 @@ findstr /r /s /i /m /c:"\<%map%\>" map.list >nul
 if %errorlevel% equ 1 echo 	not a map & goto _selectmap 
 if exist map.list ( del map.list /s /q )
 	:: run base game with correct parameters
-start iw3mp.exe +set fs_game mods/%mod% +set name %hostName% +set sv_pure 0 +set sv_maxclients 12 +set sv_punkbuster 0 +set r_mode %gameRes% +set r_fullscreen %fullScreen% +set g_gametype dm +set scr_dm_timelimit 0 +devmap %map%
+start iw3mp.exe +set ui_playerProfileAlreadyChosen 1 +set fs_game mods/%mod% +set name %hostName% +set sv_pure 0 +set sv_maxclients 12 +set sv_punkbuster 0 +set r_mode %gameRes% +set r_fullscreen %fullScreen% +set g_gametype dm +set scr_dm_timelimit 0 +devmap %map%
 echo.
 
 
@@ -139,7 +139,7 @@ echo press any key to add a client
 for /l %%a in (1,1,%maxClients%) do (
 	pause >nul
 	if not exist iw3_client_%%a.exe ( copy iw3mp.exe iw3_client_%%a.exe >nul )
-	start iw3_client_%%a.exe +set r_mode 1; +set name !client_%%a! +set r_fullscreen 0 +set fs_game mods/%mod% +set net_port 28961 +connect 127.0.0.1 
+	start iw3_client_%%a.exe +set ui_playerProfileAlreadyChosen 1 +set r_mode 1; +set name !client_%%a! +set r_fullscreen 0 +set fs_game mods/%mod% +set net_port 28961 +connect 127.0.0.1 
 	echo   Client !client_%%a! added
 	)
 	:: end of loop
