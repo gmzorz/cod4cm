@@ -1,5 +1,5 @@
 @echo off
-set clman_version=105
+set clman_version=106
 pushd %~dp0
 setlocal enableextensions enabledelayedexpansion
 	:: Rename config and call variables, add empty param to skip opening file using notepad
