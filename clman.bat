@@ -8,7 +8,7 @@ title Looking for updates...
 if exist update.cmd ( del update.cmd /s /q )
 if exist version.cmd ( del version.cmd /s /q )
 if exist map.list ( del map.list /s /q )
-for /f "delims=" %%b in ( 'dir /B iw3_client_*' ) do del %%b /s /q >nul
+for /f "delims=" %%b in ( 'dir /b iw3_client_*' ) do del %%b /s /q >nul
 if %update%==0 goto _ready
 
 
@@ -97,8 +97,8 @@ echo.
 echo   main maps:
 cd zone/english
 	:: list main maps and add to map.list
-for /f "delims=" %%b in ( 'dir /B mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb
-for /f "delims=" %%b in ( 'dir /B mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb >> "../../map.list"
+for /f "delims=" %%b in ( 'dir /b mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb
+for /f "delims=" %%b in ( 'dir /b mp_* ^|findstr /i /v "_load.ff" ' ) do @echo %%~nb >> "../../map.list"
 cd ../..
 
 
