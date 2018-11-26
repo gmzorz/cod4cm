@@ -39,7 +39,7 @@ del update.cmd /s /q >nul
 del check.cmd /s /q >nul
 echo update complete, please restart client manager
 timeout /t 5 >nul
-exit
+start notepad "update.log" & exit
 
 
 :_ready
