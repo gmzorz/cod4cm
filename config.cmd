@@ -1,5 +1,10 @@
-goto c
-	:: do not remove this line
+		::::::::::::::IGNORE:::::::::::::::
+		   if not [%1] == [] goto config
+		 start notepad "config.cmd" & exit
+		:::::::::::::::::::::::::::::::::::
+		::::::::CoD4 Client Manager::::::::
+		:::::::::http://gmzorz.com:::::::::
+		:::::::::::::::::::::::::::::::::::
 
 :config
 set update=1
@@ -27,43 +32,3 @@ set clientRes=0
 	:: for more info, run cod4 and write "r_mode " in console
 set customMod=
 	:: Load a custom mod instead of ZorWarfare, leave empty if you wish to use the default mod
-	
-	
-	:: End of config, please do not modify anything below this point
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-goto endofconfig
-:c
-
-
-		::::::::::::::IGNORE:::::::::::::::
-		if not [%1] == [] goto config
-		start notepad "config.cmd" & exit
-		::::::::::::::IGNORE:::::::::::::::
-
-
-
-:endofconfig
-echo config.cmd called
