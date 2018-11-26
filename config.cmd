@@ -2,8 +2,8 @@
 		   if not [%1] == [] goto config
 		 start notepad "config.cmd" & exit
 		:::::::::::::::::::::::::::::::::::
-		::::::::CoD4 Client Manager::::::::
-		:::::::::http://gmzorz.com:::::::::
+		::::::  CoD4 Client Manager  ::::::
+		::::::   http://gmzorz.com   ::::::
 		:::::::::::::::::::::::::::::::::::
 
 :config
