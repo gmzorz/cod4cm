@@ -1,5 +1,5 @@
 @echo off
-set clman_version=106
+set clman_version=107
 pushd %~dp0
 setlocal enableextensions enabledelayedexpansion
 	:: Rename config and call variables, add empty param to skip opening file using notepad
@@ -91,8 +91,12 @@ echo.
 cls
 	:: list custom maps (if available)
 echo   custom maps:
-if exist usermaps ( cd usermaps & dir /b & dir /b > "../map.list" )
-cd ..
+if exist usermaps ( 
+	cd usermaps 
+	dir /b & dir /b > "../map.list"
+	cd ..
+)
+
 echo. 
 echo   main maps:
 cd zone/english
